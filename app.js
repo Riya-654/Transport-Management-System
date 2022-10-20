@@ -191,7 +191,7 @@ app.post('/bhk-selec12',async(req,res)=>{
 			
 			const enq1=await Apt2.findOne({bhk,north:"0"})
 			if(enq1){
-		return res.json({status:'error',error:'North Facing Not Available '})
+		return res.json({status:'error',error:'Not Available '})
 		}
 		}
 	
@@ -211,7 +211,6 @@ app.post('/confirmation',async(req,res)=>{
 		return res.json({status:'error',error:'Slot is Already Booked'})
 	}
 	
-	//res.json({status:'ok',data:'okayy'})
 
     var data3 = {
         "name": name,
@@ -239,7 +238,6 @@ app.post('/confirmation2',async(req,res)=>{
 		return res.json({status:'error',error:'Slot is Already Booked'})
 	}
 	
-	//res.json({status:'ok',data:'okayy'})
 
     var data3 = {
         "name": name,
