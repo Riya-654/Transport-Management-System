@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>home page</title>
+<head>
+<style>
+body {
+ background-image: url("bus5.jpg");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+}
+
+.centered {
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  top: 15%;
+  left: 13%;
+  text-shadow: -1px 1px 0 #000,
+                          1px 1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px -1px 0 #000;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #c0ded9
+
+;
+  position: absolute;
+  top:50%;
+  left:45%;
+}
+
+.button1:hover {
+  background-color: #c2d4dd;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #c0ded9
+
+;
+  position: absolute;
+  top:65%;
+  left:45%;
+}
+
+.button2:hover {
+  background-color: #c2d4dd;
+  color: white;
+}
+
+</style>
+</head>
+<body bgcolor="#c0ded9">
+<!--<img src="bus5.jpg" alt="bg_image" height=550 width=1280></img>-->
+<div class="centered"><b>4R TRANSPORT MANAGEMENT SYSTEM</b></div>
+<button class="button button1" onClick="myFunction1()">LOGIN</button>
+<button class="button button2" onClick="myFunction2()">SIGN UP</button>
+
+<script>
+  function myFunction1() {
+    window.location.href="login.html";  
+  }
+
+  function myFunction2() {
+    window.location.href="signup2.php";  
+  }
+</script> 
+</body>
+</html>

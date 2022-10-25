@@ -1,0 +1,74 @@
+<html>
+    <head>
+        
+		 <style>		
+             
+        #container{
+            align-content: center;
+            width: 600px;
+            height: 400px;
+            padding: 2px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            margin-bottom: auto;
+            box-shadow: 0 0 10px;
+            background-color: white;
+           
+        }
+        #form div{
+		align-content: center;
+           display:block;
+           margin-top: 40px;
+           padding-left: 20px;
+        }
+        #form input{
+		align-content: center;
+            margin-left: 100px;
+            
+        }
+        #btn{
+		align-content: center;
+            padding:10px;
+            width:250px;
+            background-color: white; 
+            color: black; 
+            border: 2px solid #009999;
+
+        }
+        #btn:hover{
+		
+            background-color: #009999;
+            color: white;
+        }
+		
+    </style>
+    </head>
+   
+<body bgcolor="#f0f0f0">
+<div id="container">
+                    <div >
+                        <div style="padding-left:250px">
+                            <h1>LOGIN</h1>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="form">
+                        
+                    <form id="login" action="login.php" method="post">
+					  <div>SRN<input type="text" id="username" name="uname" size="50"/></div>
+                      <div>Password<input type="password" id="password" name="psw" size="50" /></div>
+                     <div><input id="btn" type="submit" value="Submit Form"  /></div>
+                       
+                    </form>
+                    </div>
+                    <p style="text-align:center">Not Registered?Create an account now<a href='http://localhost/ctms/signup2.php'>Sign Up</a></p>
+                   
+                    
+ </div>	
+</body>
+</html>
+
