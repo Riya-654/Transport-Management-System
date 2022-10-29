@@ -90,17 +90,19 @@ session_start();
         if (empty($_POST["SRN"])) {
             $srnErr = "SRN is required";
         } else {
+		
+	    $query = "select * from registration where srn = '$SRN' limit 1";
+            $result = mysqli_query($con, $query);
+            if($result){
+              $srnErr = "An account with this srn already exists";
+            }
             $pattern='/PES[123]UG\d{2}..\d{3}/i';
             $SRN=test_input($_POST['SRN']);
             if(!preg_match($pattern,$SRN)){
                 $srnErr = "Format of SRN is wrong";
             }
 
-            $query = "select * from registration where srn = '$SRN' limit 1";
-            $result = mysqli_query($con, $query);
-            if($result){
-              $srnErr = "An account with this srn already exists";
-            }
+            
 
         }
 
