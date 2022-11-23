@@ -30,7 +30,19 @@ session_start();
 					{
 
 						$_SESSION['srn'] = $user_data['srn'];
-						header("Location: index.php");
+
+						$query1 = "select booked from registration where srn='$user_name' limit 1";
+						$r1 = mysqli_query($con, $query1);
+						$data = mysqli_fetch_assoc($r1);
+						#$b=$data2['booked'];
+
+						if($data['booked']==1){
+							header("Location: payment2.php");
+						}
+						else{
+							header("Location: index.php");
+						}
+			
 						die;
 					}
 				}

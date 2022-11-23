@@ -6,6 +6,34 @@ session_start();
 
 	$user_data = check_login($con);
 
+
+  if($_SERVER['REQUEST_METHOD'] == "POST")
+  {
+    $route_no = $_POST['routes'];
+    //echo "You have selected :" .$route_no;
+
+    $query1 = "select Seats from drivers where Route_No='$route_no'";
+    $res1 = mysqli_query($con, $query1);
+    $data = mysqli_fetch_assoc($res1);
+    $seat=$data['Seats'];
+    //echo "Seats Avail :" .$seat;
+    
+    if($seat != 0){
+      $srn=$user_data['srn'];
+      $query = "update registration set route='$route_no' where srn='$srn'";
+      mysqli_query($con, $query);
+      header("Location: seatAvail.php");
+    }
+    else{
+      header("Location: noSeats.php");
+    }
+
+
+    
+
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -74,31 +102,28 @@ session_start();
 </div>
 <p>
 <div class="drop">
+<form id="routeForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <label for="routes"><h1>Please select a route</h1></label>
+<center>
 <select name="routes" id="routes">
-<option value="route1">Route 1</option>
-<option value="route2">Route 2</</option>
-<option value="route3">Route 3</</option>
-<option value="route4">Route 4</</option>
-<option value="route5">Route 5</option>
-<option value="route6">Route 6</</option>
-<option value="route7">Route 7</</option>
-<option value="route8">Route 8</</option>
-</select>
+<option value="1">Route 1</option>
+<option value="2">Route 2</option>
+<option value="3">Route 3</option>
+<option value="4">Route 4</option>
+<option value="5">Route 5</option>
+<option value="6">Route 6</option>
+<option value="7">Route 7</option>
+<option value="8">Route 8</option>
+</select></center><br/><br/>
+<input type="submit" class="btn btn-primary" value=" Proceed to check seat availability" style = "font-size:20px" />
+</form>
 </div>
 </p>
-<p>
-<button class="button button1"> <a href="login.html">Proceed to check seat availability</a> </button></p>
+
+
+
 
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
